@@ -1,3 +1,13 @@
+# Project Setup
+Go to project forlder and follow below steps.
+1. npm install
+2. npm start
+3. Login Details => user any valid email and password. **Example - email: sharmil.adroja@gmail.com, password: Demo@123**
+4. For local setup plz check csv file is there at path or not. if not just copy past csv file in **assets/csv** folder.
+
+# Live URL
+EV Dashboard - **https://66e72091964c39296f68310e--radiant-zuccutto-6f541f.netlify.app/**
+
 # MapUp - Analytics Dashboard Assessment
 
 ## Overview
