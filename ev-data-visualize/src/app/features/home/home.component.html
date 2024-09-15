@@ -1,0 +1,72 @@
+<div class="component-header">
+  <span>Dashborad</span>
+</div>
+<div class="flex flex-column gap-4 p-4">
+  <div class="grid gap-3">
+    <div class="col shadow-1 bg-white border-round-md p-4">
+      <span class="font-semibold text-sm text-color-secondary"
+        >Total Number of Vehicles</span
+      >
+      <p class="font-bold text-2xl">{{ totalVehicles }}</p>
+    </div>
+    <div class="col shadow-1 bg-white border-round-md p-4">
+      <span class="font-semibold text-sm text-color-secondary"
+        >Number of CAFV Eligible Vehicles</span
+      >
+      <p class="font-bold text-2xl">{{ totalCAFVEligible }}</p>
+    </div>
+    <div class="col shadow-1 bg-white border-round-md p-4">
+      <span class="font-semibold text-sm text-color-secondary"
+        >Electric Range</span
+      >
+      <p class="font-bold text-2xl">{{ totalElectricRange || 0 }}</p>
+    </div>
+    <div class="col shadow-1 bg-white border-round-md p-4">
+      <span class="font-semibold text-sm text-color-secondary"
+        >Average MSRP of Vehicles</span
+      >
+      <p class="font-bold text-2xl">{{ averageMSRP }}</p>
+    </div>
+  </div>
+
+  <div class="grid gap-3">
+    <div
+      class="col h-fit w-full flex justify-content-center align-items-center shadow-1 bg-white border-round-md p-4"
+    >
+      <div class="w-6 text-center">
+        <p-chart type="pie" [data]="pieChartData?.pieChartData"></p-chart>
+        <h4 class="mt-2">Types of electric vehicles in percentage(%)</h4>
+      </div>
+    </div>
+    <div
+      class="col h-fit w-full flex justify-content-center align-items-center shadow-1 bg-white border-round-md p-4"
+    >
+      <div class="w-6 text-center">
+        <p-chart
+          type="pie"
+          [data]="pieChartEligibility?.pieChartData"
+        ></p-chart>
+        <h4 class="mt-2">Eligibility (CAFV) types in percentage(%)</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col shadow-1 bg-white border-round-md p-0">
+      <div class="flex justify-content-between align-items-center p-3">
+        <h3>Vehicle's Count Report</h3>
+        <p-dropdown
+          [options]="filterDropdown"
+          [(ngModel)]="selectedFilter"
+          (ngModelChange)="calculateCountsByField($event.value)"
+          optionLabel="label"
+          placeholder="Select a Filter"
+        />
+      </div>
+
+      <div class="h-fit w-full text-center p-3">
+        <p-chart type="bar" [data]="barChartDetails?.data"></p-chart>
+      </div>
+    </div>
+  </div>
+</div>

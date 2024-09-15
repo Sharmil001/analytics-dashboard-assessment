@@ -1,0 +1,40 @@
+// Primeng CSS 
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+:root{
+  --priamry-background: #1a2f5f;
+  --white: rgb(255, 255, 255);
+  --primary-color: rgb(247, 151, 28);
+  --sidebar-background: #243e79;
+  --avatar-background: #1294d2;
+  --content-background: #f7faff;
+  --primary-text: #22242e;
+  --border-color: #eaf1fe;
+  --secondary-border-color: #eaf1fe;
+}
+
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.component-header {
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: capitalize;
+  background: var(--priamry-background);
+  padding: 10px 20px;
+}
+
+// PRIMENG CSS MODIFIED
+
+.p-password, .p-input-icon-right > .p-inputtext{
+  width: 100%;
+}

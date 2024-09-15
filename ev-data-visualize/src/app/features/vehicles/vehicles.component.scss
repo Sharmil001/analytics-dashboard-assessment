@@ -1,0 +1,63 @@
+.search-input {
+  position: relative;
+}
+
+.table-caption {
+  border: 2px solid var(--secondary-border-color);
+}
+
+.table-search .p-inputtext {
+  border-radius: 23px;
+  padding: 10px 20px 10px 34px;
+}
+
+.table-search .search-group {
+  min-width: 350px;
+}
+
+.table-search i {
+  z-index: 1;
+}
+
+::ng-deep .data-grid .p-datatable .p-datatable-header {
+  padding: 0rem;
+}
+
+::ng-deep .data-grid .p-datatable .p-datatable-thead > tr > th {
+  padding: 1;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: var(--content-background);
+  border: none;
+}
+
+::ng-deep .data-grid .p-datatable .p-datatable-tbody > tr > td {
+  padding: 1rem;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+  border-width: 1px 0 0 0;
+}
+
+::ng-deep .data-grid .p-datatable .p-datatable-header {
+  background: transparent;
+  border: none;
+}
+
+::ng-deep .p-paginator {
+  padding: 1rem;
+  background: var(--content-background);
+  border: none;
+}
+
+::ng-deep .p-paginator .p-paginator-pages .p-paginator-page,
+::ng-deep .p-paginator .p-paginator-first,
+::ng-deep .p-paginator .p-paginator-prev,
+::ng-deep .p-paginator .p-paginator-next,
+::ng-deep .p-paginator .p-paginator-last,
+::ng-deep .p-paginator .p-paginator-current {
+  min-width: 2rem;
+  height: 2rem;
+  color: var(--primary-text);
+  border: none;
+}

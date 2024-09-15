@@ -1,0 +1,94 @@
+<div class="component-header">
+  <span>Vehicles</span>
+</div>
+<div class="content">
+  <p-table
+    #dt
+    class="data-grid"
+    [columns]="vehicleCols"
+    [globalFilterFields]="[
+      'vin',
+      'make',
+      'model',
+      'city',
+      'state',
+      'county',
+      'postalCode',
+      'electricVehicleType',
+      'electricRange',
+      'cafvEligibility',
+    ]"
+    [selectionPageOnly]="true"
+    [responsive]="true"
+    [value]="vehiclesList"
+    [autoLayout]="true"
+    selectionMode="single"
+    [(selection)]="selectedActivityType"
+    [resizableColumns]="true"
+    [paginator]="true"
+    [rows]="10"
+    [showCurrentPageReport]="true"
+    [scrollable]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [rowsPerPageOptions]="[10, 50, 100, 500]"
+  >
+    <ng-template pTemplate="caption">
+      <div class="table-caption p-2">
+        <div class="table-search flex gap-6 align-items-center">
+          <span class="p-input-icon-left search-group ml-auto">
+            <i class="pi pi-search"></i>
+            <input
+              pInputText
+              class="search-input w-full"
+              type="text"
+              (input)="dt.filterGlobal($any($event.target)?.value, 'contains')"
+              placeholder="Search keyword"
+            />
+          </span>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+          <div class="flex align-items-center gap-2 grid-filters">
+            <span> {{ col.header }}</span>
+            <p-sortIcon
+              *ngIf="col.field !== 'isActive'"
+              [field]="col.field"
+              ariaLabel="Activate to sort"
+              ariaLabelDesc="Activate to sort in descending order"
+              ariaLabelAsc="Activate to sort in ascending order"
+            ></p-sortIcon>
+
+            <!-- text -->
+            <div *ngIf="col.filterType === 'text'">
+              <p-columnFilter
+                type="text"
+                [field]="col.field"
+                display="menu"
+                filterMode="single"
+              ></p-columnFilter>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <td *ngFor="let col of columns">
+          <span>
+            <div class="text-break-all">
+              {{ rowData[col.field] }}
+            </div></span
+          >
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage" let-columns>
+      <tr>
+        <td class="text-center" [attr.colspan]="10">No records found</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

@@ -1,0 +1,29 @@
+<div class="menu-scrollbar">
+  <p-sidebar
+    [(visible)]="visible"
+    position="left"
+    [showCloseIcon]="false"
+    styleClass="np-menubar"
+    [modal]="false"
+    [closeOnEscape]="false"
+  >
+    <div
+      class="toggle bg-primary flex justify-content-center align-items-center"
+      (click)="sideBar()"
+      *ngIf="visible"
+    >
+      <i class="pi pi-arrow-left"></i>
+    </div>
+    <br />
+    <ul class="block list-none pt-2 p-0 m-0" *ngFor="let item of items">
+      <li
+        class="text-white flex gap-2 align-items-center p-2 px-4 hover-bg cursor-pointer"
+        [ngClass]="router.url === item.routerLink ? 'active' : ''"
+        (click)="onSelectMenu(item)"
+      >
+        <i class="pi pi-caret-right"></i>
+        <span>{{ item.label }}</span>
+      </li>
+    </ul>
+  </p-sidebar>
+</div>

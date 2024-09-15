@@ -1,0 +1,7 @@
+<div [ngClass]="isMenuVisible ? 'isPadding' : ''">
+  <app-header></app-header>
+</div>
+<div class="ng-content" [ngClass]="{ 'hidden-menu-content': !isMenuVisible }">
+  <app-sidebar></app-sidebar>
+  <router-outlet></router-outlet>
+</div>

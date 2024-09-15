@@ -1,0 +1,36 @@
+.toggle {
+  border-radius: 50%;
+  color: var(--white);
+  height: 2.2rem;
+  position: fixed;
+  top: 10px;
+  left: 235px;
+  z-index: 999999 !important;
+  width: 2.2rem;
+  cursor: pointer;
+}
+
+.hover-bg:hover{
+  background: var(--priamry-background);
+} 
+
+.active i{
+  color: var(--primary-color);
+}
+
+::ng-deep .np-menubar {
+  background-color: var(--sidebar-background) !important;
+  color: var(--white);
+  overflow: auto;
+  border: none !important;
+  padding: 0px !important;
+  width: 255px !important;
+}
+
+::ng-deep .p-sidebar .p-sidebar-header {
+  padding: 0rem;
+}
+
+::ng-deep .p-sidebar .p-sidebar-content{
+  padding: 0rem;
+}

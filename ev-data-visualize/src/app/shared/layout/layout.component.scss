@@ -1,0 +1,16 @@
+.isPadding {
+  padding-left: 256px !important;
+}
+
+.ng-content {
+  overflow: auto;
+  padding-left: 254px;
+  background: var(--content-background);
+  background-repeat: no-repeat;
+  background-position: bottom 0px right 0px;
+  height: calc(100% - 66px) !important;
+}
+
+.hidden-menu-content{
+  padding: 0px;
+}
