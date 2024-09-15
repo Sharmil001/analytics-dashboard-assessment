@@ -1,5 +1,5 @@
 # Project Setup
-Go to project forlder and follow below steps.
+Go to project folder and follow below steps.
 1. npm install
 2. npm start
 3. Login Details => user any valid email and password. **Example - email: sharmil.adroja@gmail.com, password: Demo@123**
