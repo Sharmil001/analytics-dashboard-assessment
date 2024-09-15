@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import * as Papa from 'papaparse';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { map, catchError, switchMap, concatMap, reduce } from 'rxjs/operators';
+import { CONFIG } from 'src/app/config/config';
 
 export interface Vehicle {
   model: string;
@@ -24,6 +25,10 @@ export class VehicleService {
   private vehicleSubject = new BehaviorSubject<Vehicle[]>([]); // BehaviorSubject to store vehicle data
   private vehiclesLoaded = false; // To track whether the data is already loaded
 
+  // While doing zip I have remove this filr from the path please add it.
+  // filePath  = assets/csv/Electric_Vehicle_Population_Data.csv
+  filePath: string = CONFIG.csvFilePath;
+
   constructor(private http: HttpClient) {}
 
   // Function to fetch vehicles, with cache logic
@@ -32,7 +37,7 @@ export class VehicleService {
       return this.vehicleSubject.asObservable();
     } else {
       return this.http
-        .get('assets/csv/Electric_Vehicle_Population_Data.csv', {
+        .get(this.filePath, {
           responseType: 'text',
         })
         .pipe(

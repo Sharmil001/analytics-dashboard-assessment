@@ -21,6 +21,12 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    const getUser: any = sessionStorage.getItem('user');
+    let isAuthenticated: any = JSON.parse(getUser);
+    if (isAuthenticated) {
+      this.router.navigateByUrl('/dashboard');
+      return;
+    }
     this.createLoginForm();
   }
 
